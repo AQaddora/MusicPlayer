@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using System;
 using UnityEngine;
+using System.IO.Ports;
+using System.Threading;
 
 // @GamerBox 2018
 
@@ -23,8 +23,14 @@ public class AudioEqualizer : MonoBehaviour
 	private float[] visualScale1, visualScale2;
 	private int amountOfVisuals = 16;
 
+	int i = 1;
+	//Arduino Variables
+     public static SerialPort sp = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+     public static string strIn; 
+
 	private void Start ()
 	{
+		OpenConnection();
 		audioSource = GetComponent<AudioSource> ();
 		samples = new float[1024];
 		spectrum = new float[1024];
@@ -47,7 +53,6 @@ public class AudioEqualizer : MonoBehaviour
 		}
 
 		for (int i = amountOfVisuals - 1; i >= 0; i--) {
-			Debug.Log (i + amountOfVisuals);
 			GameObject obj = Instantiate (visualPrefav);
 			visualList2 [i] = obj.transform;
 			visualList2 [i].position = Vector3.right * (i + amountOfVisuals);
@@ -101,6 +106,8 @@ public class AudioEqualizer : MonoBehaviour
 				visualScale1 [visualIndex] = maxVisualScale;
 
 			visualList1 [visualIndex].localScale = Vector3.one * 0.5f + Vector3.up * visualScale1 [visualIndex];
+			Debug.Log((int)visualScale1[visualIndex]);
+			sp.Write(((int)visualScale1[visualIndex]).ToString());
 
 			if (visualScale2 [visualIndex] < scaleY)
 				visualScale2 [visualIndex] = scaleY;
@@ -110,8 +117,10 @@ public class AudioEqualizer : MonoBehaviour
 
 			visualList2 [visualIndex].localScale = Vector3.one * 0.5f + Vector3.up * visualScale2 [visualIndex];
 
+			
 			visualIndex++;
 		}
+		sp.Write("-");
 	}
 
 	private void AnalyzeSound ()
@@ -128,7 +137,42 @@ public class AudioEqualizer : MonoBehaviour
 		//DB
 		dbValue = 20 * Mathf.Log10 (rmsValue / 0.1f);
 
-		//Spetrum
+		//Spetrum using Foriuer transform. 
 		audioSource.GetSpectrumData (spectrum, 0, FFTWindow.BlackmanHarris);
 	}
+
+	 //Function connecting to Arduino
+     public void OpenConnection() 
+     {
+         if (sp != null) 
+         {
+             if (sp.IsOpen) 
+             {
+                 sp.Close();
+                 Debug.Log("Closing port, because it was already open!");
+             }
+             else 
+             {
+                 sp.Open();  // opens the connection
+                 sp.ReadTimeout = 60;  // sets the timeout value before reporting error
+                 Debug.Log("Port Opened!");
+             }
+         }
+         else 
+         {
+             if (sp.IsOpen)
+             {
+                 print("Port is already open");
+             }
+             else 
+             {
+                 print("Port == null");
+             }
+         }
+     }
+ 
+     void OnApplicationQuit() 
+     {
+         sp.Close();
+     }
 }

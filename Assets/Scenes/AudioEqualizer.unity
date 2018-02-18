@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.44117647, g: 0.6195245, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -434,11 +434,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1636304913}
+  - component: {fileID: 1636304914}
+  - component: {fileID: 1636304915}
   - component: {fileID: 1636304912}
   - component: {fileID: 1636304911}
   - component: {fileID: 1636304910}
-  - component: {fileID: 1636304915}
-  - component: {fileID: 1636304914}
   - component: {fileID: 1636304916}
   m_Layer: 0
   m_Name: Main Camera
@@ -521,7 +521,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cc9769717fe9fbc4fb89c722f899652b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4bd4b296b50ee6344b9e8abf454ea58f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -579,7 +579,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -603,16 +603,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a86a02934ded545b3c2bded9a68bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rmsValue: 0
-  dbValue: 0
-  visualMultiplier: 500
+  rmsValue: 0.024919301
+  dbValue: -12.069283
+  visualMultiplier: 400
   smoothSpeed: 10
   maxVisualScale: 5
   keepPercentage: 0.5
-  bgIntensity: 0
+  bgIntensity: -0.30173206
   bgMatierial: {fileID: 2100000, guid: bda338adbae1e384d8a69bda5834715f, type: 2}
-  minColor: {r: 0, g: 0.17263412, b: 0.44117647, a: 0}
-  maxColor: {r: 0, g: 0.38938046, b: 1, a: 0}
+  minColor: {r: 0, g: 0.1183154, b: 0.33088237, a: 0}
+  maxColor: {r: 0, g: 0.35757542, b: 1, a: 0}
   visualPrefav: {fileID: 1737495227813002, guid: a0ad3ef6b69e3524c82e2c19fefd1fe9,
     type: 2}
 --- !u!114 &1636304916
