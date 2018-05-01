@@ -8,37 +8,62 @@ using System.Threading;
 public class AudioEqualizer : MonoBehaviour
 {
 
-	public float rmsValue, dbValue, visualMultiplier = 50, smoothSpeed = 10, 
-		maxVisualScale = 25, keepPercentage = 0.5f, bgIntensity;
+	public GameObject parent;
+	private float rmsValue, dbValue, bgIntensity;
+	public float visualMultiplier = 50, smoothSpeed = 10, 
+		maxVisualScale = 25, keepPercentage = 0.5f;
 
 	public Material bgMatierial;
 	public Color minColor, maxColor;
 	public GameObject visualPrefav;
 
-	private AudioSource audioSource;
+	public static AudioSource audioSource;
 	private float[] samples, spectrum;
 	private float sampleRate;
 
 	private Transform[] visualList1, visualList2;
 	private float[] visualScale1, visualScale2;
-	private int amountOfVisuals = 16;
+	public int amountOfVisuals = 64;
 
 	int i = 1;
 	//Arduino Variables
-     public static SerialPort sp = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+     public static SerialPort sp = new SerialPort("COM4", 9600, Parity.None, 8, StopBits.One);
      public static string strIn; 
 
 	private void Start ()
 	{
-		OpenConnection();
+		//OpenConnection();
 		audioSource = GetComponent<AudioSource> ();
 		samples = new float[1024];
 		spectrum = new float[1024];
 		sampleRate = AudioSettings.outputSampleRate;
 
-		SpawnLine ();
+		SpawnCircle ();
 	}
 
+	private void SpawnCircle()
+	{
+		visualScale1 = new float[amountOfVisuals];
+		visualList1 = new Transform[amountOfVisuals];
+
+		Vector3 center = Vector3.zero;
+		float radius = 7.5f;
+
+		for(int i = 0; i < amountOfVisuals; i++)
+		{
+			float ang = i * 1.0f / amountOfVisuals;
+			ang = ang * Mathf.PI * 2;
+			float x = center.x + Mathf.Cos(ang) * radius;
+			float y = center.y + Mathf.Sin(ang) * radius;
+
+			Vector3 pos = center + new Vector3(x, y, 0);
+			GameObject obj = Instantiate (visualPrefav);
+			obj.transform.position = pos;
+			obj.transform.rotation = Quaternion.LookRotation(Vector3.forward, pos);
+			obj.transform.parent = parent.transform;
+			visualList1 [i] = obj.transform;
+			}
+	}
 	private void SpawnLine ()
 	{
 		visualList1 = new Transform[amountOfVisuals];
@@ -50,12 +75,14 @@ public class AudioEqualizer : MonoBehaviour
 			GameObject obj = Instantiate (visualPrefav);
 			visualList1 [i] = obj.transform;
 			visualList1 [i].position = Vector3.right * i;
+			obj.transform.parent = parent.transform;
 		}
 
 		for (int i = amountOfVisuals - 1; i >= 0; i--) {
 			GameObject obj = Instantiate (visualPrefav);
 			visualList2 [i] = obj.transform;
 			visualList2 [i].position = Vector3.right * (i + amountOfVisuals);
+			obj.transform.parent = parent.transform;			
 		}
 
 		for (int i = 0; i < amountOfVisuals / 2; i++) {
@@ -70,15 +97,32 @@ public class AudioEqualizer : MonoBehaviour
 		AnalyzeSound ();
 		UpdateVisual ();
 		UpdateBackground ();
+
+
+		/*try{
+             audioSource.volume = sp.ReadByte();
+			 Debug.Log(audioSource.volume);
+         }
+         catch(System.Exception){
+         }*/
+
 	}
 
 	private void UpdateBackground ()
 	{
-		bgIntensity -= Time.deltaTime * smoothSpeed;
+		bgIntensity -= Time.deltaTime;
+		//parent.transform.localScale -= Vector3.one * Time.deltaTime * smoothSpeed;
 		if (bgIntensity < dbValue / 40)
+		{
 			bgIntensity = dbValue / 40;
-
-		bgMatierial.color = Color.Lerp (maxColor, minColor, -bgIntensity * 0.7f);
+			//parent.transform.localScale = Vector3.one;			
+		}
+		
+		//Debug.Log(-bgIntensity * 255 + "  " + (char) (bgIntensity * 0.7f * 255));
+		//sp.Write(((char) (-bgIntensity * 255)).ToString());
+		bgMatierial.SetColor("_FColor", Color.Lerp (maxColor, minColor, -bgIntensity * 0.7f));
+		//bgMatierial.SetColor("_BColor", Color.Lerp (maxColor, minColor, -bgIntensity * 0.7f));
+		parent.transform.localScale = Vector3.Lerp(Vector3.one * 1.15f, Vector3.one ,  -bgIntensity * 0.7f);
 	}
 
 	private void UpdateVisual ()
@@ -94,10 +138,9 @@ public class AudioEqualizer : MonoBehaviour
 				spectrumIndex++;
 				j++;
 			}
-
 			float scaleY = sum / avarageSize * visualMultiplier;
 			visualScale1 [visualIndex] -= Time.deltaTime * smoothSpeed;
-			visualScale2 [visualIndex] -= Time.deltaTime * smoothSpeed;
+//			visualScale2 [visualIndex] -= Time.deltaTime * smoothSpeed;
 
 			if (visualScale1 [visualIndex] < scaleY)
 				visualScale1 [visualIndex] = scaleY;
@@ -106,21 +149,20 @@ public class AudioEqualizer : MonoBehaviour
 				visualScale1 [visualIndex] = maxVisualScale;
 
 			visualList1 [visualIndex].localScale = Vector3.one * 0.5f + Vector3.up * visualScale1 [visualIndex];
-			Debug.Log((int)visualScale1[visualIndex]);
-			sp.Write(((int)visualScale1[visualIndex]).ToString());
+			//sp.Write(((int)visualScale1[visualIndex]).ToString());
 
-			if (visualScale2 [visualIndex] < scaleY)
+/*			if (visualScale2 [visualIndex] < scaleY)
 				visualScale2 [visualIndex] = scaleY;
 
 			if (visualScale2 [visualIndex] > maxVisualScale)
 				visualScale2 [visualIndex] = maxVisualScale;
 
-			visualList2 [visualIndex].localScale = Vector3.one * 0.5f + Vector3.up * visualScale2 [visualIndex];
+			visualList2 [visualIndex].localScale = Vector3.one * 0.5f + Vector3.up * visualScale2 [visualIndex];*/
 
 			
 			visualIndex++;
 		}
-		sp.Write("-");
+		//sp.Write("-");
 	}
 
 	private void AnalyzeSound ()

@@ -1,0 +1,20 @@
+Modern UI Pack - v1.1
+
+Made by Michsky. Some icons made with photoshop shapes.
+You can subscribe my youtube channel for more:
+https://www.youtube.com/c/Michsky
+
+Do you have any questions or requests?
+Contact me via e-mail: isa.steam@outlook.com
+
+Change Log v1.1
+--------------------
+• Toggles added
+• Switches added
+• Rating system added (WIP)
+• New progress bars added
+• Re-work on progress bars
+• Re-work on sliders
+• Some icons added
+• Editor shortcuts added
+• Some animation bugs fixed
