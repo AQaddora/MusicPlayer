@@ -1,6 +1,6 @@
 **A Music player with audio equalizer that analyzes the audio signals and to frequency domain "FFT", and visualizes the energy spectrum with a cool animated wave spectrum video effect. Also this project allows you to filter the audio signal using a high-pass filter, low-pass ..etc**. 
 
-**Watch this: https://youtu.be/K7EWtDHlZg0**
+**Watch this: https://youtu.be/yB_gBECY5Ug**
 
 >> use this in your projects, giving credits isn't forced but it would be nice. <<
 
