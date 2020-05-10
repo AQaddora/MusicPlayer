@@ -13,6 +13,7 @@ public class AudioEqualizer : MonoBehaviour
 	public float visualMultiplier = 50, smoothSpeed = 10, 
 		maxVisualScale = 25, keepPercentage = 0.5f;
 
+	public GlitchEffect glitchEffect;
 	public Material bgMatierial;
 	public Color minColor, maxColor;
 	public GameObject visualPrefav;
@@ -111,9 +112,17 @@ public class AudioEqualizer : MonoBehaviour
 	private void UpdateBackground ()
 	{
 		bgIntensity -= Time.deltaTime;
+		float glitchValue = -0.5f * bgIntensity;	
+		if(glitchEffect.intensity > 0) glitchEffect.intensity -= Time.deltaTime*2f;
+		if(glitchEffect.colorIntensity > 0) glitchEffect.colorIntensity -= Time.deltaTime*2f;
+		if(glitchEffect.flipIntensity > 0) glitchEffect.flipIntensity -= Time.deltaTime*2f;
 		//parent.transform.localScale -= Vector3.one * Time.deltaTime * smoothSpeed;
 		if (bgIntensity < dbValue / 40)
 		{
+			glitchEffect.intensity =glitchValue;
+			glitchEffect.colorIntensity = 0.5f*glitchValue;
+			glitchEffect.flipIntensity = 0.3f* glitchValue;
+			Debug.Log(bgIntensity);
 			bgIntensity = dbValue / 40;
 			//parent.transform.localScale = Vector3.one;			
 		}

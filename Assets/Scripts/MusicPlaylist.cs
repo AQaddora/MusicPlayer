@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.IO;
 using System.Collections.Generic;
-using TMPro;
 public class MusicPlaylist : MonoBehaviour {
 
 	public static MusicPlaylist Instance;
@@ -12,7 +12,7 @@ public class MusicPlaylist : MonoBehaviour {
 	string myPath;
 	AudioSource audioSource;
 	private GameObject[] listings;
-	private AudioClip[] clips;
+	public AudioClip[] clips;
 	private int index = 0;
 	public GameObject listingPrefab;
 	public AlphaUI loadingPanel;
@@ -24,12 +24,17 @@ public class MusicPlaylist : MonoBehaviour {
 	public CashWWW cashWWWInstance;
 	public Text loadingText;
 
+	private Vector3 wantedPos;
+	private bool isLerping;
+	
 	void Awake () 
 	{
 		Instance = this;
 		audioSource = GetComponent<AudioSource>();
+		Application.runInBackground = true;
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 #if UNITY_ANDROID
-		myPath = "/storage/sdcard0/Music";
+		myPath = Application.persistentDataPath + "/Music";
 #endif
 #if UNITY_STANDALONE
 		myPath = "Builds/Music";
@@ -37,17 +42,30 @@ public class MusicPlaylist : MonoBehaviour {
 #if Unity_Editor
 		myPath = "Builds/Music";
 #endif
-
-		MusicFolder = new DirectoryInfo(myPath);
+		
+		
 
 	}
 	private void Start()
 	{
-		StartCoroutine(UpdateMusicLibrary());
+		try
+		{
+			MusicFolder = new DirectoryInfo(myPath);
+			StartCoroutine(UpdateMusicLibrary());
+		}
+		catch (Exception e)
+		{
+			Debug.LogError(e.Message);
+		}
 	}
 
 	void Update()
 	{
+		if (isLerping)
+		{
+			transform.localPosition = Vector3.Lerp(transform.localPosition, wantedPos, Time.deltaTime * 5f);
+			isLerping = !(Mathf.Abs(transform.localPosition.x - wantedPos.x) < 0.2f);
+		}
 		if(unpaused)
 		{
 			spentTime += Time.deltaTime;
@@ -55,8 +73,28 @@ public class MusicPlaylist : MonoBehaviour {
 	}
 	private IEnumerator UpdateMusicLibrary()
 	{
+		if (!MusicFolder.Exists)
+		{
+			listings = new GameObject[clips.Length];
+			for (int i = 0; i < clips.Length; i++)
+			{
+				GameObject obj = Instantiate(listingPrefab);
+				obj.transform.parent = listingsParent;
+				obj.GetComponentInChildren<Text>().text = "  " + clips[i].name;
+				obj.name = clips[i].name;;
+				obj.GetComponent<RectTransform>().localScale = Vector3.one;
+				listings[i] = obj;
+			}
+			yield break;
+		}
 		loadingPanel.Show();
+		
 		int length = MusicFolder.GetFiles().Length;
+		if (length == 0)
+		{
+			loadingPanel.Hide();
+			yield break;
+		}
 		loadingText.text = "Scanning files \"" + MusicFolder.Name + "\"...";
 		clips = new AudioClip[length];
 		listings = new GameObject[length];
@@ -80,7 +118,7 @@ public class MusicPlaylist : MonoBehaviour {
 #endif
 			GameObject obj = Instantiate(listingPrefab);
 			obj.transform.parent = listingsParent;
-			obj.GetComponentInChildren<TextMeshProUGUI>().SetText("  " + MusicFolder.GetFiles()[i].Name);
+			obj.GetComponentInChildren<Text>().text = "  " + MusicFolder.GetFiles()[i].Name.Substring(0, MusicFolder.GetFiles()[i].Name.Length-4);
 			obj.name =  MusicFolder.GetFiles()[i].Name;
 			obj.GetComponent<RectTransform>().localScale = Vector3.one;
 			listings[i] = obj;
@@ -162,5 +200,12 @@ public class MusicPlaylist : MonoBehaviour {
 		spentTime = 0;
 		CancelInvoke();		
 		Invoke("ChangeToNextClip", clips[index].length); 
+	}
+
+	public void ToggleListButton()
+	{
+		float xValue = transform.localPosition.x < 1 ? 10 : 0;
+		wantedPos = new Vector3(xValue, transform.localPosition.y, transform.localPosition.z);
+		isLerping = true;
 	}
 }

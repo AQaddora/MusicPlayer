@@ -1,64 +1,168 @@
 fileFormatVersion: 2
 guid: b295b6401049aca4faf1374aad10abde
-timeCreated: 1508578070
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Button Basic
-    21300002: Button Basic Outline
-    21300004: Button Rounded
-    21300006: Button Rounded Outline
-    21300008: Circle Outline (x8)
-    21300010: Basic Gradient
-    21300012: Circle
-    21300014: Rounded Switch
-    21300016: Circle Outline (x1)
-    21300018: Circle Outline Big
-    21300020: Circle Big
-    21300022: Circle Outline Cut Big
-    21300024: Save
-    21300026: Fix
-    21300028: Warning
-    21300030: Info
-    21300032: Yes with Circle
-    21300034: No with Circle
-    21300036: Checkmark Thin
-    21300038: No
-    21300040: Button Basic Outline (x1)
-    21300042: Button Basic Outline (x2)
-    21300044: Button Basic Outline (x3)
-    21300046: Button Rounded Outline (x2)
-    21300048: Button Rounded Outline (x3)
-    21300050: Button Basic Outline (x6)
-    21300052: Button Rounded Outline (x1)
-    21300054: Circle Outline Big Thin
-    21300056: Circle Outline (x2)
-    21300058: Circle Outline (x3)
-    21300060: Circle Outline (x4)
-    21300062: Circle Outline (x5)
-    21300064: Chat
-    21300066: Refresh
-    21300068: User
-    21300070: Lock
-    21300072: Phone
-    21300074: Video
-    21300076: Cup
-    21300078: Heart
-    21300080: Pin
-    21300082: Checkmark Light
-    21300084: Checkmark Regular
-    21300086: Checkmark Bold
-    21300088: Circle Outline Big Light
-    21300090: Circle Outline Big Regular
-    21300092: Circle Outline Big Bold
-    21300094: Star
-    21300096: Star Filled
-    21300098: Settings
-    21300100: Lamp
-    21300102: Shield
-    21300104: Global
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Button Basic
+  - first:
+      213: 21300002
+    second: Button Basic Outline
+  - first:
+      213: 21300004
+    second: Button Rounded
+  - first:
+      213: 21300006
+    second: Button Rounded Outline
+  - first:
+      213: 21300008
+    second: Circle Outline (x8)
+  - first:
+      213: 21300010
+    second: Basic Gradient
+  - first:
+      213: 21300012
+    second: Circle
+  - first:
+      213: 21300014
+    second: Rounded Switch
+  - first:
+      213: 21300016
+    second: Circle Outline (x1)
+  - first:
+      213: 21300018
+    second: Circle Outline Big
+  - first:
+      213: 21300020
+    second: Circle Big
+  - first:
+      213: 21300022
+    second: Circle Outline Cut Big
+  - first:
+      213: 21300024
+    second: Save
+  - first:
+      213: 21300026
+    second: Fix
+  - first:
+      213: 21300028
+    second: Warning
+  - first:
+      213: 21300030
+    second: Info
+  - first:
+      213: 21300032
+    second: Yes with Circle
+  - first:
+      213: 21300034
+    second: No with Circle
+  - first:
+      213: 21300036
+    second: Checkmark Thin
+  - first:
+      213: 21300038
+    second: No
+  - first:
+      213: 21300040
+    second: Button Basic Outline (x1)
+  - first:
+      213: 21300042
+    second: Button Basic Outline (x2)
+  - first:
+      213: 21300044
+    second: Button Basic Outline (x3)
+  - first:
+      213: 21300046
+    second: Button Rounded Outline (x2)
+  - first:
+      213: 21300048
+    second: Button Rounded Outline (x3)
+  - first:
+      213: 21300050
+    second: Button Basic Outline (x6)
+  - first:
+      213: 21300052
+    second: Button Rounded Outline (x1)
+  - first:
+      213: 21300054
+    second: Circle Outline Big Thin
+  - first:
+      213: 21300056
+    second: Circle Outline (x2)
+  - first:
+      213: 21300058
+    second: Circle Outline (x3)
+  - first:
+      213: 21300060
+    second: Circle Outline (x4)
+  - first:
+      213: 21300062
+    second: Circle Outline (x5)
+  - first:
+      213: 21300064
+    second: Chat
+  - first:
+      213: 21300066
+    second: Refresh
+  - first:
+      213: 21300068
+    second: User
+  - first:
+      213: 21300070
+    second: Lock
+  - first:
+      213: 21300072
+    second: Phone
+  - first:
+      213: 21300074
+    second: Video
+  - first:
+      213: 21300076
+    second: Cup
+  - first:
+      213: 21300078
+    second: Heart
+  - first:
+      213: 21300080
+    second: Pin
+  - first:
+      213: 21300082
+    second: Checkmark Light
+  - first:
+      213: 21300084
+    second: Checkmark Regular
+  - first:
+      213: 21300086
+    second: Checkmark Bold
+  - first:
+      213: 21300088
+    second: Circle Outline Big Light
+  - first:
+      213: 21300090
+    second: Circle Outline Big Regular
+  - first:
+      213: 21300092
+    second: Circle Outline Big Bold
+  - first:
+      213: 21300094
+    second: Star
+  - first:
+      213: 21300096
+    second: Star Filled
+  - first:
+      213: 21300098
+    second: Settings
+  - first:
+      213: 21300100
+    second: Lamp
+  - first:
+      213: 21300102
+    second: Shield
+  - first:
+      213: 21300104
+    second: Global
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -76,6 +180,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -86,7 +192,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 2
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -98,18 +204,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,7 +227,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -127,7 +239,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,6 +251,8 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -153,6 +270,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Basic Outline (x1)
       rect:
@@ -167,6 +291,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Rounded
       rect:
@@ -181,6 +312,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Rounded Outline (x1)
       rect:
@@ -195,6 +333,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x8)
       rect:
@@ -209,6 +354,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Basic Gradient
       rect:
@@ -223,6 +375,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle
       rect:
@@ -237,6 +396,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Rounded Switch
       rect:
@@ -251,6 +417,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x1)
       rect:
@@ -265,6 +438,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline Big Thin
       rect:
@@ -279,6 +459,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Big
       rect:
@@ -293,6 +480,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline Cut Big
       rect:
@@ -307,6 +501,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Save
       rect:
@@ -321,6 +522,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Fix
       rect:
@@ -335,6 +543,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Warning
       rect:
@@ -349,6 +564,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Info
       rect:
@@ -363,6 +585,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Yes with Circle
       rect:
@@ -377,6 +606,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: No with Circle
       rect:
@@ -391,6 +627,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Checkmark Thin
       rect:
@@ -405,6 +648,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: No
       rect:
@@ -419,6 +669,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Basic Outline (x2)
       rect:
@@ -433,6 +690,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Basic Outline (x3)
       rect:
@@ -447,6 +711,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Rounded Outline (x2)
       rect:
@@ -461,6 +732,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Button Rounded Outline (x3)
       rect:
@@ -475,6 +753,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x2)
       rect:
@@ -489,6 +774,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x3)
       rect:
@@ -503,6 +795,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x4)
       rect:
@@ -517,6 +816,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline (x5)
       rect:
@@ -531,6 +837,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Chat
       rect:
@@ -545,6 +858,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Refresh
       rect:
@@ -559,6 +879,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: User
       rect:
@@ -573,6 +900,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Lock
       rect:
@@ -587,6 +921,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Phone
       rect:
@@ -601,6 +942,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Video
       rect:
@@ -615,6 +963,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Cup
       rect:
@@ -629,6 +984,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Heart
       rect:
@@ -643,6 +1005,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Pin
       rect:
@@ -657,6 +1026,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Checkmark Light
       rect:
@@ -671,6 +1047,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Checkmark Regular
       rect:
@@ -685,6 +1068,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Checkmark Bold
       rect:
@@ -699,6 +1089,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline Big Light
       rect:
@@ -713,6 +1110,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline Big Regular
       rect:
@@ -727,6 +1131,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Circle Outline Big Bold
       rect:
@@ -741,6 +1152,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Star
       rect:
@@ -755,6 +1173,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Star Filled
       rect:
@@ -769,6 +1194,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 08305410000000000800000000000000
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Settings
       rect:
@@ -783,6 +1215,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Lamp
       rect:
@@ -797,6 +1236,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Shield
       rect:
@@ -811,6 +1257,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Global
       rect:
@@ -825,9 +1278,26 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 88305410000000000800000000000000
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
