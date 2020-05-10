@@ -112,19 +112,19 @@ public class AudioEqualizer : MonoBehaviour
 	private void UpdateBackground ()
 	{
 		bgIntensity -= Time.deltaTime;
-		float glitchValue = -0.5f * bgIntensity;	
-		if(glitchEffect.intensity > 0) glitchEffect.intensity -= Time.deltaTime*2f;
-		if(glitchEffect.colorIntensity > 0) glitchEffect.colorIntensity -= Time.deltaTime*2f;
-		if(glitchEffect.flipIntensity > 0) glitchEffect.flipIntensity -= Time.deltaTime*2f;
-		//parent.transform.localScale -= Vector3.one * Time.deltaTime * smoothSpeed;
+		float glitchValue = -0.8f * bgIntensity;	
+		if(glitchEffect.intensity > 0) glitchEffect.intensity -= Time.deltaTime;
+		if(glitchEffect.colorIntensity > 0) glitchEffect.colorIntensity -= Time.deltaTime;
+		if(glitchEffect.flipIntensity > 0) glitchEffect.flipIntensity -= Time.deltaTime;
+		parent.transform.localScale -= Vector3.one * Time.deltaTime * smoothSpeed;
 		if (bgIntensity < dbValue / 40)
 		{
 			glitchEffect.intensity =glitchValue;
 			glitchEffect.colorIntensity = 0.5f*glitchValue;
-			glitchEffect.flipIntensity = 0.3f* glitchValue;
+			glitchEffect.flipIntensity = 0.5f* glitchValue;
 			Debug.Log(bgIntensity);
 			bgIntensity = dbValue / 40;
-			//parent.transform.localScale = Vector3.one;			
+			parent.transform.localScale = Vector3.one;			
 		}
 		
 		//Debug.Log(-bgIntensity * 255 + "  " + (char) (bgIntensity * 0.7f * 255));
